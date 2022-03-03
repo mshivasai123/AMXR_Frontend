@@ -1,0 +1,70 @@
+.home-wrapper {
+    background: url("../images/landing_screen.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    .brand-logo-wrapper {
+        max-width: 250px;
+        padding: 60px 0 0 80px;
+    }
+    .home-main-content-wrapper {
+        position: absolute;
+        top: 60px;
+        margin-top: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        .home-title {
+            font-size: 30px;
+            line-height: 1;
+            margin: 0;
+        }
+        .home-text {
+            font-size: 16px;
+            line-height: 1;
+        }
+        form {
+            max-width: 335px;
+            margin: 100px auto 0;
+            .phone-number {
+                color: #efbe09;
+                text-align: left;
+                letter-spacing: 2px;
+                &[disabled] {
+                    opacity: 0.3;
+                }
+            }
+            .otp-message {
+                font-style: italic;
+                font-size: 12px;
+                text-align: left;
+                opacity: 0.7;
+                .highlighter {
+                    color: #efbe09;
+                    font-style: normal;
+                    cursor: pointer;
+                }
+            }
+        }
+        .success-otp {
+            max-width: 335px;
+            margin: 50px auto 0;
+            .success-image {
+                .right-img {
+                    width: 50px;
+                }
+            }
+            .thank-title {
+                margin: 0;
+                color: #7ac91e;
+                font-size: 20px;
+            }
+            .thank-text {
+                margin: 0;
+            }
+        }
+    }
+}
+

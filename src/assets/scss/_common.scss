@@ -1,0 +1,85 @@
+
+/*===================================================
+=            Coomon Stlyes for the site            =
+=====================================================*/
+
+/* Font Styles Files Uplodding */
+
+@include font("Able-Regular", "../fonts/abel/Abel-Regular");
+@include font("Segoe-UI", "../fonts/segoe-ui/Segoe-UI"); 
+@include font("Segoe-UI-Bold", "../fonts/segoe-ui/Segoe-UI-Bold");
+
+/* Common Styles Start from Here */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  @include margin(0, 0, 0, 0);
+  font-family: "Able-Regular", sans-serif;
+  background: $color-black;
+  color: $color-white;
+}
+body a {
+  text-decoration: none !important;
+}
+
+button {
+  outline: none;
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.Able-Regular {
+  font-family: "Able-Regular", sans-serif !important;
+}
+.Segoe-UI-Bold {
+  font-family: "Segoe-UI-Bold", sans-serif !important;
+}
+.Segoe-UI {
+  font-family: "Segoe-UI", sans-serif !important;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sction-btn {
+  border: 0;
+  background: transparent;
+  @extend.input-group;
+}
+
+.input-control {
+  border: 0;
+  border-bottom: 2px solid #efbe09;
+  background: transparent;
+  outline: none;
+  min-width: 280px;
+  font-size: 16px;
+  color: #efbe09;
+  padding-bottom: 5px;
+  &::placeholder {
+    color: #efbe09;
+  }
+  &.otp {
+    letter-spacing: 10px;
+  }
+}
+
+.sction-btn {
+  margin-left: 10px;
+  cursor: pointer;
+  .img-responsive {
+    width: 32px;
+  }
+}
