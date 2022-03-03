@@ -60,19 +60,32 @@ button {
 }
 
 .input-control {
-  border: 0;
-  border-bottom: 2px solid #efbe09;
-  background: transparent;
-  outline: none;
-  min-width: 280px;
-  font-size: 16px;
-  color: #efbe09;
-  padding-bottom: 5px;
-  &::placeholder {
+  .mat-form-field-label-wrapper {
+    margin-top: -5px;
+  }
+  .mat-form-field-label {
+    font-size: 16px;
+    color: #efbe09;
+    padding-bottom: 5px;
+  }
+  &.mat-form-field-appearance-standard .mat-form-field-underline,
+  &.mat-form-field.mat-focused .mat-form-field-ripple {
+    height: 2px;
+    background-color:#efbe09;
+  }
+  .mat-input-element {
+    caret-color: #efbe09;
+  }
+  &.mat-form-field.mat-focused .mat-form-field-label {
+    font-size: 16px;
     color: #efbe09;
   }
+  font-weight: 400;
+  min-width: 280px;
   &.otp {
-    letter-spacing: 10px;
+    .mat-form-field-label {
+      letter-spacing: 5px;
+    }
   }
 }
 

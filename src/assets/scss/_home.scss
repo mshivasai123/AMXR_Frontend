@@ -16,8 +16,9 @@
     }
     .home-main-content-wrapper {
         position: absolute;
+        @extend.Able-Regular;
         top: 60px;
-        margin-top: 75px;
+        margin-top: 80px;
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
@@ -28,11 +29,15 @@
         .home-title {
             font-size: 30px;
             line-height: 1;
+            @extend.Able-Regular;
             margin: 0;
+            font-weight: 400;
         }
         .home-text {
             font-size: 16px;
             line-height: 1;
+            font-weight: 400;
+            margin-top: 10px;
         }
         form {
             max-width: 335px;
@@ -44,6 +49,8 @@
                 color: #efbe09;
                 text-align: left;
                 letter-spacing: 2px;
+                font-weight: 400;
+                margin: 0;
                 &[disabled] {
                     opacity: 0.3;
                 }
@@ -53,6 +60,8 @@
                 font-size: 12px;
                 text-align: left;
                 opacity: 0.7;
+                font-weight: 400;
+                margin-top: -10px;
                 .highlighter {
                     color: #efbe09;
                     font-style: normal;

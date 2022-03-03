@@ -6,19 +6,26 @@
     <div class="home-main-content-wrapper">
       <h2 class="home-title">India's First VR OTT Platform</h2>
       <p class="home-text">Get notified - Pre-registered members will get 50% off on Annual subscription</p>
-      <form>
+      <form action="/">
         <div class="input-group">
-          <input type="text" class="input-control" name="email" placeholder="Enter Mobile Number / Email ID"/>
+          <mat-form-field appearance="standard" class="input-control">
+            <mat-label>Enter Mobile Number / Email ID</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <!-- <input type="text" class="input-control" name="email" placeholder="Enter Mobile Number / Email ID"/> -->
           <button class="sction-btn">
             <img src="../assets/images/arrow-right-circle.svg" class="img-responsive" alt="arrow-img"/>
           </button>
         </div>
       </form>
 
-      <form *ngIf="false">
+      <form action="/" *ngIf="false">
         <p class="phone-number" disabled>99499449494</p>
         <div class="input-group">
-          <input type="text" class="input-control otp" name="email" placeholder="OTP"/>
+          <mat-form-field appearance="standard" class="input-control otp">
+            <mat-label>OTP</mat-label>
+            <input matInput>
+          </mat-form-field>
           <button class="sction-btn">
             <img src="../assets/images/arrow-right-circle.svg" class="img-responsive" alt="arrow-img"/>
           </button>
