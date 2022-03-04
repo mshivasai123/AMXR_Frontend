@@ -3,9 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgOtpInputModule } from  'ng-otp-input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialExampleModule } from 'src/material.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +12,7 @@ import { MaterialExampleModule } from 'src/material.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgOtpInputModule,
-    BrowserAnimationsModule,
-    MaterialExampleModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
