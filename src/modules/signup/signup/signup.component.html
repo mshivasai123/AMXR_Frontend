@@ -6,7 +6,7 @@
     <div class="home-main-content-wrapper">
       <h2 class="home-title">India's First VR OTT Platform</h2>
       <p class="home-text">Get notified - Pre-registered members will get 50% off on Annual subscription</p>
-      <form action="/" *ngIf="true">
+      <form action="/" *ngIf="false">
         <div class="input-group">
           <mat-form-field appearance="standard" class="input-control">
             <mat-label>Enter Mobile Number / Email ID</mat-label>
@@ -19,20 +19,22 @@
         </div>
       </form>
 
-      <form action="/" *ngIf="false">
-        <p class="phone-number" disabled>99499449494</p>
-        <div class="input-group">
-          <!-- <mat-form-field appearance="standard" class="input-control otp">
-            <mat-label>OTP</mat-label>
-            <input matInput>
-          </mat-form-field> -->
-          <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:5}"></ng-otp-input>
+      <form action="/" *ngIf="true" class="form-otp">
+        <div>
+          <p class="phone-number" disabled>99499449494</p>
+          <div class="input-group otp">
+            <!-- <mat-form-field appearance="standard" class="input-control otp">
+              <mat-label>OTP</mat-label>
+              <input matInput>
+            </mat-form-field> -->
+            <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:5}"></ng-otp-input>
 
-          <button class="sction-btn">
-            <img src="../assets/images/arrow-right-circle.svg" class="img-responsive" alt="arrow-img"/>
-          </button>
-        </div>
-        <p class="otp-message">Please enter 5 digits OTP - 25 sec<span class="highlighter"> (Resend OTP)</span></p>
+            <button class="sction-btn">
+              <img src="../assets/images/arrow-right-circle.svg" class="img-responsive" alt="arrow-img"/>
+            </button>
+          </div>
+          <p class="otp-message">Please enter 5 digits OTP - 25 sec<span class="highlighter"> (Resend OTP)</span></p>
+        </div>  
       </form>
 
       <div class="success-otp" *ngIf="false"> 
