@@ -57,6 +57,12 @@ button {
       justify-content: start;
     }
   }
+  .input-control {
+    min-width: 90%;
+    @media screen and (max-width:768px) { 
+      min-width: 85%;
+    }
+  }
 }
 
 .form-otp {
@@ -73,20 +79,24 @@ button {
 
 .input-control {
   .mat-form-field-label-wrapper {
-    margin-top: -5px;
+    margin-top: -10px;
   }
   .mat-form-field-label {
-    font-size: 16px;
+    font-size: 18px;
     color: #efbe09;
     padding-bottom: 5px;
+    @extend .Able-Regular;
   }
   &.mat-form-field-appearance-standard .mat-form-field-underline,
-  &.mat-form-field.mat-focused .mat-form-field-ripple {
+  &.mat-form-field.mat-focused .mat-form-field-ripple.Able-Regular,
+  .mat-form-field-ripple {
     height: 2px;
-    background-color:#efbe09;
+    background-color:#efbe09 !important;
   }
   .mat-input-element {
     caret-color: #efbe09;
+    font-size: 18px;
+    @extend .Able-Regular;
   }
   &.mat-form-field.mat-focused .mat-form-field-label {
     font-size: 16px;
@@ -103,15 +113,19 @@ button {
 
 ng-otp-input {
   .otp-input {
-    font-size: 16px !important;
+    font-size: 18px !important;
     background: transparent !important;
     border: 0 !important;
     border-bottom: 2px solid #efbe09 !important;
     border-radius: 0 !important;
     color: #fff !important;
-    height: 40px !important;
+    @extend .Able-Regular;
+    height: 50px !important;
     &:focus {
       outline: none;
+    }
+    @media screen and (max-width: 420px) {
+      width: 40px !important;
     }
   }
 }
@@ -121,5 +135,6 @@ ng-otp-input {
   cursor: pointer;
   .img-responsive {
     width: 32px;
+    height:32px;
   }
 }

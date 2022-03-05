@@ -5,11 +5,14 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    @media screen and (max-width:768px) {
+        padding: 0 15px;
+    }
     .brand-logo-wrapper {
         max-width: 250px;
-        padding: 60px 0 0 80px;
+        padding: 35px 0 0 50px;
         @media screen and (max-width:768px) {
-            padding: 60px 0 0 0;
+            padding: 0px 0 0 0;
             margin: 0 auto;
             max-width: 200px;
         }
@@ -25,23 +28,33 @@
         @media screen and (max-width:768px) {
             position: relative;
             margin: 0;
+            top: 0;
+            padding: 0 15px;
         }
         .home-title {
-            font-size: 30px;
+            font-size: 40px;
+            text-transform: uppercase;
             line-height: 1;
             @extend.Able-Regular;
             margin: 0;
             font-weight: 400;
+            @media screen and (max-width:768px) {
+                font-size: 30px;
+            }
         }
         .home-text {
-            font-size: 16px;
+            font-size: 22px;
             line-height: 1;
             font-weight: 400;
+            color: #ecbe08;
             margin-top: 10px;
+            @media screen and (max-width:768px) {
+                font-size: 16px;
+            }
         }
         form {
-            max-width: 335px;
-            margin: 100px auto 0;
+            max-width: 510px;
+            margin: 80px auto 0;
             @media screen and (max-width:768px) {
                 margin: 50px auto 0;
             }
@@ -89,3 +102,15 @@
     }
 }
 
+.copy-right {
+    position: fixed;
+    bottom: 15px;
+    right: 25px;
+    font-size: 14px;
+    @extend .Able-Regular;
+    font-weight: 400;
+    color: #757070;
+    .link-copy {
+        color: #ecbe08;
+    }
+}
