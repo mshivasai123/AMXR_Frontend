@@ -15,7 +15,10 @@ export class SignupService {
 
   sendEmailAndNum(data:any) : Observable<any>{
     const api = 'https://www.acinemas.com/ACAPIS/OTP.php'
-    return this.httpClient.post(api, data);
+    const fData: FormData = new FormData;
+    fData.append("OTPType", data.OTPType);
+    fData.append("EmailMobile", data.EmailMobile);
+    return this.httpClient.post(api, fData);
   }
 
   openSnackBar(data:string) {
