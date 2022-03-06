@@ -10,10 +10,10 @@
         <div class="input-group">
           <mat-form-field appearance="standard" class="input-control">
             <mat-label>Enter Mobile Number / Email ID</mat-label>
-            <input matInput>
+            <input [(ngModel)]="numOrMail" matInput [ngModelOptions]="{standalone: true}">
           </mat-form-field>
           <!-- <input type="text" class="input-control" name="email" placeholder="Enter Mobile Number / Email ID"/> -->
-          <button class="sction-btn">
+          <button class="sction-btn" (click)="submitEmailAndNum()">
             <img src="../assets/images/arrow-right-circle.svg" class="img-responsive" alt="arrow-img"/>
           </button>
         </div>
@@ -21,7 +21,7 @@
 
       <form action="/" *ngIf="false" class="form-otp">
         <div>
-          <p class="phone-number" disabled>99499449494</p>
+          <p class="phone-number" disabled>{{numOrMail}}</p>
           <div class="input-group otp">
             <!-- <mat-form-field appearance="standard" class="input-control otp">
               <mat-label>OTP</mat-label>

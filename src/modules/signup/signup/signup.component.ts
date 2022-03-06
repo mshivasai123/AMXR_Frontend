@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SignupService } from './signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  numOrMail: any;
+  constructor(
+    public signupService : SignupService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  submitEmailAndNum(){
+    if(this.numOrMail){
+      const data = {
+        OTPType : /^\d+$/.test(this.numOrMail) ? 'Mobile' :'Email' ,
+        EmailMobile : this.numOrMail
+      }
+      this.signupService.sendEmailAndNum(data).subscribe(res=>{
+        if(res){
+          console.log('res',res)
+        }
+      },err=>{
+        this.signupService.openSnackBar('Something went wrong')
+      })
+    }
   }
 
   onOtpChange(event:any){
