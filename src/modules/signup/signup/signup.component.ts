@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
   EmailMobile: any;
   OTPID : any;
   OTP: any;
-  time: number = 0;
+  time: number = 60;
   interval: any;
 
   constructor(
@@ -29,6 +29,7 @@ export class SignupComponent implements OnInit {
   }
 
   submitEmailAndNum(){
+    this.time = 60;
     this.startTimer();
     if(this.numOrMail){
       this.showLoader = true
@@ -59,8 +60,8 @@ export class SignupComponent implements OnInit {
 
   startTimer() {
     const timmer = setInterval(()=>{
-       this.time++
-      if(this.time === 60){ 
+       this.time--
+      if(this.time === 0){ 
         this.resendOtp = true;
         clearInterval(timmer)
       }
@@ -74,7 +75,7 @@ export class SignupComponent implements OnInit {
       this.showLoader = true
       const data = {
         OTPType : this.OTPType,
-        EmailMobile : this.EmailMobile,
+        EmailMobile : this.numOrMail,
         OTPID : this.OTPID,
         OTP : this.OTP,
       }
