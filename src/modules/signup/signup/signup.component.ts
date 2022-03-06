@@ -7,7 +7,7 @@ import { SignupService } from './signup.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-
+  showLoader:boolean = false;
   numOrMail: any;
   constructor(
     public signupService : SignupService
@@ -18,16 +18,19 @@ export class SignupComponent implements OnInit {
 
   submitEmailAndNum(){
     if(this.numOrMail){
+      this.showLoader = true
       const data = {
         OTPType : /^\d+$/.test(this.numOrMail) ? 'Mobile' :'Email' ,
         EmailMobile : this.numOrMail
       }
       this.signupService.sendEmailAndNum(data).subscribe(res=>{
         if(res){
+          this.showLoader = false;
           console.log('res',res)
         }
       },err=>{
         this.signupService.openSnackBar('Something went wrong')
+        this.showLoader = false;
       })
     }
   }

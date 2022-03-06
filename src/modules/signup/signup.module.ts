@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoaderComponent } from './signup/loader/loader.component';
 
 const routes: Routes = [{
   path:'',component: SignupComponent
@@ -14,7 +15,8 @@ const routes: Routes = [{
 
 @NgModule({
   declarations: [
-    SignupComponent
+    SignupComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
