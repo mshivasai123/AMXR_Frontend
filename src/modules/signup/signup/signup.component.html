@@ -7,7 +7,7 @@
     <div class="home-main-content-wrapper">
       <h2 class="home-title">India's First VR OTT Platform</h2>
       <p class="home-text">Get notified - Pre-registered members will get 50% off on Annual subscription</p>
-      <form action="/" *ngIf="true">
+      <form action="/" *ngIf="registerPage">
         <div class="input-group">
           <mat-form-field appearance="standard" class="input-control">
             <mat-label>Enter Mobile Number / Email ID</mat-label>
@@ -20,7 +20,7 @@
         </div>
       </form>
 
-      <form action="/" *ngIf="false" class="form-otp">
+      <form action="/" *ngIf="validOtpPage" class="form-otp">
         <div>
           <p class="phone-number" disabled>{{numOrMail}}</p>
           <div class="input-group otp">
@@ -28,17 +28,17 @@
               <mat-label>OTP</mat-label>
               <input matInput>
             </mat-form-field> -->
-            <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:5}"></ng-otp-input>
+            <ng-otp-input  (onInputChange)="onOtpChange($event)" [config]="{length:5}"></ng-otp-input>
 
-            <button class="sction-btn">
+            <button class="sction-btn" (click)="validOtpForm()">
               <img src="../assets/images/arrow-right-circle.svg" class="img-responsive" alt="arrow-img"/>
             </button>
           </div>
-          <p class="otp-message">Please enter 5 digits OTP - 25 sec<span class="highlighter"> (Resend OTP)</span></p>
+          <p class="otp-message">Please enter 5 digits OTP - {{this.time}} sec<span class="highlighter" (click)="submitEmailAndNum()" [ngClass]="{'enable' : resendOtp}"> (Resend OTP)</span></p>
         </div>  
       </form>
 
-      <div class="success-otp" *ngIf="false"> 
+      <div class="success-otp" *ngIf="successOtp"> 
         <div class="success-image">
           <img src="../assets/images/check-circle.svg" class="right-img" alt="success-icon"/>
         </div>

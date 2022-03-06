@@ -21,6 +21,16 @@ export class SignupService {
     return this.httpClient.post(api, fData);
   }
 
+  verifyOtp(data : any): Observable<any>{
+    const fData: FormData = new FormData;
+    fData.append("OTPType", data.OTPType);
+    fData.append("EmailMobile", data.EmailMobile);
+    fData.append('OTPID',data.OTPID)
+    fData.append('OTP',data.OTP)
+   const api = 'https://www.acinemas.com/ACAPIS/ValidateOTP.php'
+   return this.httpClient.post(api, fData);
+  }
+
   openSnackBar(data:string) {
     this._snackBar.open(data, 'x', {
       horizontalPosition: 'center',
