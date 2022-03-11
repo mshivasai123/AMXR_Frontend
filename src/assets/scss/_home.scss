@@ -1,10 +1,14 @@
-.home-wrapper {
+body {
     background: url("../images/landing_screen.jpg");
     height: 100vh;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+.home-wrapper {
     position: relative;
+    height: 100vh;
+    overflow-y: auto;
     @media screen and (max-width:768px) {
         padding: 0 15px;
     }
