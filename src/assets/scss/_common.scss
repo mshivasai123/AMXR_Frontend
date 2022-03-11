@@ -148,3 +148,68 @@ ng-otp-input {
     height:32px;
   }
 }
+
+.footer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0px;
+  @extend .Able-Regular;
+  width: 100%;
+  padding: 0 50px 30px;
+  .social-wrapper {
+    .title {
+      color: #535353;
+      font-size: 16px;
+    }
+    .social-icons {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      .social-link-item {
+        display: inline-block;
+        &:not(:first-child) {
+          margin-left: 10px;
+        }
+        .social-link {
+          img{
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+  .acinimas-compatible-wrapper {
+    text-align: center;
+    .title {
+      font-size: 20px;
+      line-height: 1;
+      padding-bottom: 10px;
+      font-weight: 400;
+      color: #ecbe08;
+    }
+    .acinimas-compatible-block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .comp-block {
+        &:first-child {
+          padding-right: 30px;
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 25px;
+            right: 15px;
+            transform: translateY(-50%);
+            top: 50%;
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

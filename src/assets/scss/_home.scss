@@ -103,13 +103,12 @@
 }
 
 .copy-right {
-    position: fixed;
-    bottom: 15px;
-    right: 25px;
-    font-size: 14px;
+    font-size: 16px;
+    position: relative;
+    bottom: -30px;
     @extend .Able-Regular;
     font-weight: 400;
-    color: #757070;
+    color: #535353;
     .link-copy {
         color: #ecbe08;
     }
