@@ -161,7 +161,7 @@ ng-otp-input {
   padding: 0 50px 30px;
   .social-wrapper {
     .title {
-      color: #535353;
+      color: #b5b5b5;
       font-size: 16px;
     }
     .social-icons {
@@ -171,7 +171,7 @@ ng-otp-input {
       .social-link-item {
         display: inline-block;
         &:not(:first-child) {
-          margin-left: 10px;
+          margin-left: 20px;
         }
         .social-link {
           img{
@@ -237,6 +237,7 @@ body {
   .mat-menu-panel {
     min-width: 170px;
     background-color: #a98c2e;
+    margin-right: 10px;
   }
   .mat-menu-content {
     padding: 8px;
@@ -311,4 +312,19 @@ body {
     max-height: 70vh;
     overflow-y: auto; 
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
