@@ -53,6 +53,13 @@ export class SignupComponent implements OnInit {
       }
     });
   }
+  submitEmailORNum(val:any){
+    if(!(/^(?:\d{10}|\w+@\w+\.\w{2,3})$/.test(val))){
+      this.signupService.openSnackBar('Please enter a valid phone number or email')
+      return
+    }
+    this.submitEmailAndNum()
+  }
 
   submitEmailAndNum(){
     this.time = 60;
@@ -94,7 +101,7 @@ export class SignupComponent implements OnInit {
     },1000);
   }
 
-
+ 
 
   validOtpForm(){
     if(this.numOrMail){
