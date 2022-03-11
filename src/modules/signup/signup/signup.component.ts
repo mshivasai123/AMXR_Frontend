@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { CommonDialogueComponent } from './common-dialogue/common-dialogue.component';
 import { SignupService } from './signup.service';
 
 @Component({
@@ -22,10 +25,33 @@ export class SignupComponent implements OnInit {
   interval: any;
 
   constructor(
-    public signupService : SignupService
+    public signupService : SignupService,private dialog: MatDialog, public router:Router
   ) { }
 
   ngOnInit(): void {
+    console.log(this.router.url,"url")
+    if(this.router.url.includes('aboutAcinemas')){
+      this.openModal('aboutAcinemas')
+    }else if(this.router.url.includes('termsOfUse')){
+      this.openModal('termsOfUse')
+    }else if(this.router.url.includes('privacypolicies')){
+      this.openModal('privacypolicies')
+    }else if(this.router.url.includes('contact')){
+      this.openModal('contact')
+    }
+    
+  }
+
+  openModal(title:any){
+    const dialogRef = this.dialog.open(CommonDialogueComponent, {
+      data : {title : title}
+    })
+
+    dialogRef.afterClosed().subscribe((load) => {
+      if (load) {
+       
+      }
+    });
   }
 
   submitEmailAndNum(){
