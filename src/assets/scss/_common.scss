@@ -161,7 +161,7 @@ ng-otp-input {
   padding: 0 50px 30px;
   .social-wrapper {
     .title {
-      color: #535353;
+      color: #b5b5b5;
       font-size: 16px;
     }
     .social-icons {
@@ -171,7 +171,7 @@ ng-otp-input {
       .social-link-item {
         display: inline-block;
         &:not(:first-child) {
-          margin-left: 10px;
+          margin-left: 20px;
         }
         .social-link {
           img{
@@ -237,6 +237,7 @@ body {
   .mat-menu-panel {
     min-width: 170px;
     background-color: #a98c2e;
+    margin-right: 10px;
   }
   .mat-menu-content {
     padding: 8px;
