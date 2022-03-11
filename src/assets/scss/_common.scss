@@ -287,3 +287,28 @@ body {
     }
   }
 }
+
+.mat-dialog-container {
+  margin: 40px 0;
+  .model-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    @extend.Able-Regular;
+    h5 {
+      font-size: 24px;
+      @extend.Able-Regular;
+      text-transform: capitalize;
+      margin-bottom: 15px;
+    }
+    .material-icons {
+      margin-bottom: 15px;
+    }
+  }
+  .model-body {
+    margin: 20px 0;
+    max-height: 70vh;
+    overflow-y: auto; 
+  }
+}
