@@ -5,19 +5,19 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item class="active-btn">
           <span>Pre-Register</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="openModal('aboutAcinemas')">
           <span>About Acinemas</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="openModal('termsOfUse')">
           <span>Terms of use</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="openModal('privacypolicies')">
           <span>Privacy Policies</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="openModal('contact')">
           <span>Contact</span>
         </button>
       </mat-menu>
