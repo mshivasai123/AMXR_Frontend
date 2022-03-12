@@ -261,7 +261,8 @@ body {
     position: relative;
     .social-wrapper {
       text-align: center;
-      margin: 0 auto 20px;
+      order: 2;
+      margin: 10px auto 0;
       .social-icons {
         justify-content: center;
       }
@@ -284,7 +285,8 @@ body {
       bottom: 0;
       text-align: center;
       width: 100%;
-      padding: 10px 0;
+      padding: 10px 0 0;
+      order: 3;
     }
   }
 }
@@ -327,4 +329,18 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: #fff;
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+.mat-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  button {
+    color: #ff0000;
+    background: transparent;
+    border: 0;
+    font-size: 16px;
+    margin-right: 15px;
+    cursor: pointer;
+  }
 }
