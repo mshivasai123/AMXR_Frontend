@@ -261,7 +261,8 @@ body {
     position: relative;
     .social-wrapper {
       text-align: center;
-      margin: 0 auto 20px;
+      order: 2;
+      margin: 10px auto 0;
       .social-icons {
         justify-content: center;
       }
@@ -284,7 +285,8 @@ body {
       bottom: 0;
       text-align: center;
       width: 100%;
-      padding: 10px 0;
+      padding: 10px 0 0;
+      order: 3;
     }
   }
 }
