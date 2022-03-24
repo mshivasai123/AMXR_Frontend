@@ -22,18 +22,18 @@ body {
         }
     }
     .home-main-content-wrapper {
-        position: absolute;
+        // position: absolute;
         @extend.Able-Regular;
-        top: 60px;
-        margin-top: 80px;
-        left: 50%;
-        transform: translateX(-50%);
+        // top: 60px;
+        margin-top: -95px;
+        // left: 50%;
+        // transform: translateX(-50%);
         text-align: center;
         @media screen and (max-width:768px) {
             position: relative;
             margin: 0;
             top: 0;
-            padding: 0 15px;
+            // padding: 0 15px;
         }
         .home-title {
             font-size: 40px;
@@ -42,12 +42,15 @@ body {
             @extend.Able-Regular;
             margin: 0;
             font-weight: 400;
+            span {
+                color:#ecbe08;
+            }
             @media screen and (max-width:768px) {
                 font-size: 26px;
             }
         }
         .home-text {
-            font-size: 22px;
+            font-size: 20px;
             line-height: 1;
             font-weight: 400;
             color: #ecbe08;
@@ -57,11 +60,11 @@ body {
             }
         }
         form {
-            max-width: 490px;
-            margin: 80px auto 0;
-            @media screen and (max-width:768px) {
-                margin: 50px auto 0;
-            }
+            // max-width: 490px;
+            // margin: 80px auto 0;
+            // @media screen and (max-width:768px) {
+            //     margin: 50px auto 0;
+            // }
             .phone-number {
                 color: #efbe09;
                 text-align: left;
@@ -109,11 +112,24 @@ body {
 .copy-right {
     font-size: 16px;
     position: relative;
-    bottom: -30px;
+    bottom: 0px;
     @extend .Able-Regular;
     font-weight: 400;
-    color: #b5b5b5;
+    color: #5d5d5d;
     .link-copy {
         color: #ecbe08;
+    }
+}
+
+.one-place-block {
+    margin-top: 20px;
+    .sub-text {
+        font-size: 18px;
+        margin-bottom: 20px;
+        display: block;
+    }
+    .one-img-block {
+        max-width: 200px;
+        margin: 0 auto; 
     }
 }
