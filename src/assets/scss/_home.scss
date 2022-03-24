@@ -123,10 +123,18 @@ body {
 
 .one-place-block {
     margin-top: 20px;
+    @media screen and (max-width:768px) {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
     .sub-text {
         font-size: 18px;
         margin-bottom: 20px;
         display: block;
+        @media screen and (max-width:768px) {
+           margin: 0;
+         }
     }
     .one-img-block {
         max-width: 200px;
