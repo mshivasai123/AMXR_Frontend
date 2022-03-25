@@ -316,21 +316,28 @@ ng-otp-input {
 body {
   .mat-menu-panel {
     min-width: 170px;
-    background-color: #a98c2e;
+    background-color: transparent;
     margin-right: 10px;
+    box-shadow: none;
   }
   .mat-menu-content {
-    padding: 8px;
+    padding: 15px 0 15px !important;
+    background: #d2d2d1;
+    margin-top: 30px;
+    position: relative;
+    top: -15px;
   }
   .mat-menu-item {
     @extend .Able-Regular;
-    color: #fff;
+    color: #000;
     font-size: 16px;
     line-height: 35px;
     height: 35px;
+    padding: 0 35px;
+    background: #d2d2d1;
     &:hover {
-      background-color: #4b3c05 !important;
-      border-radius: 4px;
+      background-color: #fff !important;
+      border-radius: 0px;
     }
   }
 }
@@ -342,7 +349,7 @@ body {
     .social-wrapper {
       text-align: center;
       order: 2;
-      margin: 10px auto 0;
+      margin: 15px auto 15px;
       .social-icons {
         justify-content: center;
       }
@@ -425,5 +432,17 @@ select:-webkit-autofill:focus {
   }
 }
 
-.submenu                            { position: relative;}
-.submenu:after                      { position: absolute; content: ''; width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid black; left: 20px; bottom: 110%; }
+.submenu { 
+  position: relative;
+}
+.submenu:after{ 
+  position: absolute;
+  content: ''; 
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent; 
+  border-right: 15px solid transparent; 
+  border-bottom: 15px solid #d2d2d1;
+  right: 10px; 
+  top: 1%; 
+}
