@@ -26,107 +26,109 @@
       <img src="../assets/images/logo.svg" class="img-responsive" alt="brand-img" />
     </div>
 
-    <div class="home-main-content-wrapper">
-      <h2 class="home-title">India's <span>First VR OTT</span> Platform</h2>
-      <div class="one-place-block">
-        <span class="sub-text">All  @  one Place </span>
-        <div class="one-img-block">
-          <img src="assets/images/all-in-one.png" class="img-responsive" alt="all-in-one" />
+    <div class="">
+      <div class="home-main-content-wrapper">
+        <h2 class="home-title">India's <span>First VR OTT</span> Platform</h2>
+        <div class="one-place-block">
+          <span class="sub-text">All  @  one Place </span>
+          <div class="one-img-block">
+            <img src="assets/images/all-in-one.png" class="img-responsive" alt="all-in-one" />
+          </div>
         </div>
-      </div>
-      <div class="get-notified-block">
-        <h2 class="title">Get NOTIFIED!</h2>
-        <p class="home-text">Pre-Register today, to get 50% off on your annua subscription</p>
-      </div>
-      <form action="/" *ngIf="registerPage">
-        <div class="input-group step1">
-          <mat-form-field appearance="standard" class="input-control">
-            <mat-label>Enter Name</mat-label>
-            <input matInput>
-          </mat-form-field>
-          <mat-form-field appearance="standard" class="input-control">
-            <mat-label>Enter Email</mat-label>
-            <input [(ngModel)]="numOrMail" matInput [ngModelOptions]="{standalone: true}">
-          </mat-form-field>
-          <!-- <input type="text" class="input-control" name="email" placeholder="Enter Mobile Number / Email ID"/> -->
-          <button class="sction-btn" (click)="submitEmailORNum(numOrMail)">
-            <img src="../assets/images/arrow-right-circle.svg" class="img-responsive" alt="arrow-img"/>
-          </button>
+        <div class="get-notified-block">
+          <h2 class="title">Get NOTIFIED!</h2>
+          <p class="home-text">Pre-Register today, to get 50% off on your annua subscription</p>
         </div>
-        <p class="input-box-text">Note: Please enter OTP to complete the pre registration process</p>
-      </form>
-
-      <form action="/" *ngIf="validOtpPage" class="form-otp">
-        <div>
-          <p class="phone-number" disabled>{{numOrMail}}</p>
-          <div class="input-group otp">
-            <!-- <mat-form-field appearance="standard" class="input-control otp">
-              <mat-label>OTP</mat-label>
+        <form action="/" *ngIf="registerPage">
+          <div class="input-group step1">
+            <mat-form-field appearance="standard" class="input-control">
+              <mat-label>Enter Name</mat-label>
               <input matInput>
-            </mat-form-field> -->
-            <p class="otp-lable">Enter OTP</p>
-            <div class="input-group-flex">
-              <ng-otp-input  (onInputChange)="onOtpChange($event)" [config]="{length:5}"></ng-otp-input>
+            </mat-form-field>
+            <mat-form-field appearance="standard" class="input-control">
+              <mat-label>Enter Email</mat-label>
+              <input [(ngModel)]="numOrMail" matInput [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+            <!-- <input type="text" class="input-control" name="email" placeholder="Enter Mobile Number / Email ID"/> -->
+            <button class="sction-btn" (click)="submitEmailORNum(numOrMail)">
+              <img src="../assets/images/arrow-right-circle.svg" class="img-responsive" alt="arrow-img"/>
+            </button>
+          </div>
+          <p class="input-box-text">Note: Please enter OTP to complete the pre registration process</p>
+        </form>
   
-              <button class="sction-btn" (click)="validOtpForm()">
-                <img src="../assets/images/arrow-right-circle.svg" class="img-responsive" alt="arrow-img"/>
-              </button>
+        <form action="/" *ngIf="validOtpPage" class="form-otp">
+          <div>
+            <p class="phone-number" disabled>{{numOrMail}}</p>
+            <div class="input-group otp">
+              <!-- <mat-form-field appearance="standard" class="input-control otp">
+                <mat-label>OTP</mat-label>
+                <input matInput>
+              </mat-form-field> -->
+              <p class="otp-lable">Enter OTP</p>
+              <div class="input-group-flex">
+                <ng-otp-input  (onInputChange)="onOtpChange($event)" [config]="{length:5}"></ng-otp-input>
+    
+                <button class="sction-btn" (click)="validOtpForm()">
+                  <img src="../assets/images/arrow-right-circle.svg" class="img-responsive" alt="arrow-img"/>
+                </button>
+              </div>
+            </div>
+            <!-- <p class="otp-message">Please enter 5 digits OTP - {{this.time}} sec<span class="highlighter" (click)="submitEmailAndNum()" [ngClass]="{'enable' : resendOtp}"> (Resend OTP)</span></p> -->
+            <p class="input-box-text">Note: Please enter OTP to complete the pre registration process</p>
+          </div> 
+        </form>
+  
+        <div class="success-otp" *ngIf="successOtp"> 
+          <div class="success-image">
+            <img src="../assets/images/check-circle.svg" class="right-img" alt="success-icon"/>
+          </div>
+          <h2 class="thank-title">Thanks for showing interest</h2>
+          <p class="thank-text">You will get notified once Acinemas ready to rollout</p>
+        </div>
+  
+      </div>
+  
+      <div class="footer-wrapper">
+        <div class="social-wrapper">
+          <p class="title">Follow us @</p>
+          <ul class="social-icons">
+              <li class="social-link-item">
+                <a href="https://www.facebook.com/ACinemasOfficial" class="social-link" target="_blank">
+                  <img src="assets/images/facebook-svgrepo-com.svg" class="img-fluid" alt="face-book"/>
+                </a>
+              </li>
+              <li class="social-link-item">
+                <a href="https://twitter.com/a_cinemashttps://twitter.com/a_cinemas" class="social-link" target="_blank">
+                  <img src="assets/images/twitter-svgrepo-com.svg" class="img-fluid" alt="twitter"/>
+                </a>
+              </li>
+              <li class="social-link-item">
+                <a href="https://www.instagram.com/acinemasofficial/" class="social-link" target="_blank">
+                  <img src="assets/images/instagram-svgrepo-com.svg" class="img-fluid" alt="instagram"/>
+                </a>
+              </li>
+              <li class="social-link-item">
+                <a href="https://www.youtube.com/channel/UCs-0KHyW0XEsNNtGda8b3mQ" class="social-link" target="_blank">
+                  <img src="assets/images/youtube-svgrepo-com.svg" class="img-fluid" alt="youtube"/>
+                </a>
+              </li>
+          </ul>
+        </div>
+        <div class="acinimas-compatible-wrapper">
+          <p class="title">Acinemas Compatible with</p>
+          <div class="acinimas-compatible-block">
+            <div class="comp-block">
+              <img src="assets/images/Acinemas_Compatible.png" class="img-fluid" alt="comp01"/>
+            </div>
+            <div class="comp-block mobile">
+              <img src="assets/images/Acinemas_Compatible-mob.png" class="img-fluid" alt="comp02"/>
             </div>
           </div>
-          <!-- <p class="otp-message">Please enter 5 digits OTP - {{this.time}} sec<span class="highlighter" (click)="submitEmailAndNum()" [ngClass]="{'enable' : resendOtp}"> (Resend OTP)</span></p> -->
-          <p class="input-box-text">Note: Please enter OTP to complete the pre registration process</p>
-        </div> 
-      </form>
-
-      <div class="success-otp" *ngIf="successOtp"> 
-        <div class="success-image">
-          <img src="../assets/images/check-circle.svg" class="right-img" alt="success-icon"/>
         </div>
-        <h2 class="thank-title">Thanks for showing interest</h2>
-        <p class="thank-text">You will get notified once Acinemas ready to rollout</p>
-      </div>
-
-    </div>
-
-    <div class="footer-wrapper">
-      <div class="social-wrapper">
-        <p class="title">Follow us @</p>
-        <ul class="social-icons">
-            <li class="social-link-item">
-              <a href="https://www.facebook.com/ACinemasOfficial" class="social-link" target="_blank">
-                <img src="assets/images/facebook-svgrepo-com.svg" class="img-fluid" alt="face-book"/>
-              </a>
-            </li>
-            <li class="social-link-item">
-              <a href="https://twitter.com/a_cinemashttps://twitter.com/a_cinemas" class="social-link" target="_blank">
-                <img src="assets/images/twitter-svgrepo-com.svg" class="img-fluid" alt="twitter"/>
-              </a>
-            </li>
-            <li class="social-link-item">
-              <a href="https://www.instagram.com/acinemasofficial/" class="social-link" target="_blank">
-                <img src="assets/images/instagram-svgrepo-com.svg" class="img-fluid" alt="instagram"/>
-              </a>
-            </li>
-            <li class="social-link-item">
-              <a href="https://www.youtube.com/channel/UCs-0KHyW0XEsNNtGda8b3mQ" class="social-link" target="_blank">
-                <img src="assets/images/youtube-svgrepo-com.svg" class="img-fluid" alt="youtube"/>
-              </a>
-            </li>
-        </ul>
-      </div>
-      <div class="acinimas-compatible-wrapper">
-        <p class="title">Acinemas Compatible with</p>
-        <div class="acinimas-compatible-block">
-          <div class="comp-block">
-            <img src="assets/images/Acinemas_Compatible.png" class="img-fluid" alt="comp01"/>
-          </div>
-          <div class="comp-block mobile">
-            <img src="assets/images/Acinemas_Compatible-mob.png" class="img-fluid" alt="comp02"/>
-          </div>
+        <div class="copy-right">
+          &copy; 2022, Powered by <a href="https://www.amxr.in/" class="link-copy"> AMXR</a>
         </div>
-      </div>
-      <div class="copy-right">
-        &copy; 2022, Powered by <a href="https://www.amxr.in/" class="link-copy"> AMXR</a>
       </div>
     </div>
 

@@ -198,7 +198,7 @@ ng-otp-input {
 }
 
 .get-notified-block {
-  margin-top: 70px;
+  margin-top: 15px;
   .title {
     font-size: 30px;
     text-transform: uppercase;
@@ -215,10 +215,11 @@ ng-otp-input {
   flex-wrap: wrap;
   // position: fixed;
   // bottom: 0px;
-  margin-top: 10%;
+  // margin-top: 10%;
+  margin-top: 12px;
   @extend .Able-Regular;
   // width: 100%;
-  padding: 0 50px 30px;
+  padding: 0 50px 20px;
   .social-wrapper {
     .title {
       color: #5d5d5d;
