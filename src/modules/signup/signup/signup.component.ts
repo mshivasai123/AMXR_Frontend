@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
   OTP: any;
   time: number = 60;
   interval: any;
-
+  name:string = ""
   constructor(
     public signupService : SignupService,private dialog: MatDialog, public router:Router
   ) { }
@@ -66,21 +66,27 @@ export class SignupComponent implements OnInit {
     this.startTimer();
     if(this.numOrMail){
       this.showLoader = true
-      this.OTPType = /^\d+$/.test(this.numOrMail) ? 'Mobile' :'Email';
-      const data = {
-        OTPType : this.OTPType ,
-        EmailMobile : this.numOrMail
+      this.OTPType = /^\d+$/.test(this.numOrMail) ? 'mobile' :'email';
+      const data:any = {
+        otpType : this.OTPType ,
+        name: this.name
+      }
+      if(this.OTPType == 'email'){
+        data['email'] =  this.numOrMail
+      }else {
+        data['mobile'] = this.numOrMail
       }
       this.signupService.sendEmailAndNum(data).subscribe(res=>{
         if(res){
-          if(res.Result === 'SUCCESS'){
+          if(res.success){
             this.showLoader = false;
             console.log('res',res)
-            this.OTPID = res.OTPID
+            this.OTPID = res.data.id
             this.registerPage = false;
             this.validOtpPage = true;
           } else {
-            this.signupService.openSnackBar(res.Result)
+            console.log(res,"res")
+            this.signupService.openSnackBar(res)
             this.showLoader = false;
           }
         }
@@ -106,20 +112,23 @@ export class SignupComponent implements OnInit {
   validOtpForm(){
     if(this.numOrMail){
       this.showLoader = true
-      const data = {
-        OTPType : this.OTPType,
-        EmailMobile : this.numOrMail,
-        OTPID : this.OTPID,
-        OTP : this.OTP,
+      const data:any = {
+        otpType : this.OTPType,
+        otpData : this.OTP,
+      }
+      if(this.OTPType == 'email'){
+        data['email'] =  this.numOrMail
+      }else {
+        data['mobile'] = this.numOrMail
       }
       this.signupService.verifyOtp(data).subscribe(res=>{
         if(res){
-          if(res.Result === 'SUCCESS'){
+          if(res.success){
             this.showLoader = false;
             this.validOtpPage = false;
             this.successOtp = true;
           } else {
-            this.signupService.openSnackBar(res.Result)
+            this.signupService.openSnackBar(res)
             this.showLoader = false;
           }
         }

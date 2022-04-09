@@ -7,28 +7,27 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SignupService {
-
   constructor(
     private httpClient: HttpClient,
     private _snackBar: MatSnackBar
   ) { }
-
+  
   sendEmailAndNum(data:any) : Observable<any>{
-    const api = 'https://www.acinemas.com/ACAPIS/OTP.php'
-    const fData: FormData = new FormData;
-    fData.append("OTPType", data.OTPType);
-    fData.append("EmailMobile", data.EmailMobile);
-    return this.httpClient.post(api, fData);
+    const api =  'api/pre-subscribers/add'
+    // const fData: FormData = new FormData;
+    // fData.append("OTPType", data.OTPType);
+    // fData.append("EmailMobile", data.EmailMobile);
+    return this.httpClient.post(api, data);
   }
 
   verifyOtp(data : any): Observable<any>{
-    const fData: FormData = new FormData;
-    fData.append("OTPType", data.OTPType);
-    fData.append("EmailMobile", data.EmailMobile);
-    fData.append('OTPID',data.OTPID)
-    fData.append('OTP',data.OTP)
-   const api = 'https://www.acinemas.com/ACAPIS/ValidateOTP.php'
-   return this.httpClient.post(api, fData);
+    // const fData: FormData = new FormData;
+    // fData.append("OTPType", data.OTPType);
+    // fData.append("EmailMobile", data.EmailMobile);
+    // fData.append('OTPID',data.OTPID)
+    // fData.append('OTP',data.OTP)
+   const api = '/api//pre-subscribers/verify'
+   return this.httpClient.post(api, data);
   }
 
   openSnackBar(data:string) {

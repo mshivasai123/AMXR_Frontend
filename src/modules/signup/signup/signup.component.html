@@ -37,13 +37,13 @@
         </div>
         <div class="get-notified-block">
           <h2 class="title">Get NOTIFIED!</h2>
-          <p class="home-text">Pre-Register today, to get 50% off on your annua subscription</p>
+          <p class="home-text">Pre-Register today, to get 50% off on your annual subscription</p>
         </div>
         <form action="/" *ngIf="registerPage">
           <div class="input-group step1">
             <mat-form-field appearance="standard" class="input-control">
               <mat-label>Enter Name</mat-label>
-              <input matInput>
+              <input [(ngModel)]="name" matInput [ngModelOptions]="{standalone: true}" >
             </mat-form-field>
             <mat-form-field appearance="standard" class="input-control">
               <mat-label>Enter Email / Phone</mat-label>
