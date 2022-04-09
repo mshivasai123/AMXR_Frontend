@@ -447,3 +447,11 @@ select:-webkit-autofill:focus {
   right: 10px; 
   top: 1%; 
 }
+
+.main-block {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 242px);
+  justify-content: space-between;
+  padding-top: 30px;
+}
