@@ -138,6 +138,7 @@ p.input-box-text {
     // font-size: 25px;
     color: #efbe09;
     padding-bottom: 5px;
+    letter-spacing: 1px;
     @extend .Able-Regular;
   }
   &.mat-form-field-appearance-standard .mat-form-field-underline,
@@ -198,7 +199,7 @@ ng-otp-input {
 }
 
 .get-notified-block {
-  margin-top: 40px;
+  margin-top: 50px;
   .title {
     font-size: 30px;
     text-transform: uppercase;
