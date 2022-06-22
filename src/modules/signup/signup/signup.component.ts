@@ -91,7 +91,12 @@ export class SignupComponent implements OnInit {
           }
         }
       },err=>{
-        this.signupService.openSnackBar('Something went wrong')
+        console.log(err,"err")
+        if(err?.error?.errors?.length && err?.error?.errors[0]?.text){
+          this.signupService.openSnackBar(err?.error?.errors[0]?.text)
+        }else {
+          this.signupService.openSnackBar('Something went wrong')
+        }
         this.showLoader = false;
       })
     }
@@ -134,7 +139,11 @@ export class SignupComponent implements OnInit {
         }
       },err=>{
         this.showLoader = false;
-        this.signupService.openSnackBar('Something went wrong')
+        if(err?.error?.data){
+          this.signupService.openSnackBar(err?.error?.data)
+        }else {
+          this.signupService.openSnackBar('Something went wrong')
+        }
       })
     }
   }

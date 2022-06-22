@@ -68,18 +68,19 @@ body {
             // }
             .phone-number {
                 color: #efbe09;
-                text-align: left;
+                text-align: center;
                 letter-spacing: 2px;
                 font-weight: 400;
                 margin: 0;
                 &[disabled] {
                     opacity: 0.3;
                 }
+                opacity: 1!important;
             }
             .otp-message {
                 font-style: italic;
                 font-size: 12px;
-                text-align: left;
+                text-align: center;
                 opacity: 0.7;
                 font-weight: 400;
                 margin-top: 10px;

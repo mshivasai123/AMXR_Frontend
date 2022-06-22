@@ -32,3 +32,14 @@
     stroke: #ffb118;;
     stroke-width : 6% !important;
 }
+
+snack-bar-container{
+    background: red!important;
+    .mat-simple-snack-bar-content {
+        color: white;
+    }
+    .mat-button-wrapper{
+        color: white;
+        font-size: 20px;
+    }
+}
